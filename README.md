@@ -20,9 +20,9 @@ Example:
 Example on how to add to your connector:
 ```
 transforms=router
-transforms.router.type=name.kel.code.kafka.connect.smt.TimestampRouterWithTz$Value
+transforms.router.type=name.kel.code.kafka.connect.smt.TimestampRouterWithTz
 transforms.router.tz="Australia/Sydney"
-transforms.router.timestamp.format="yyyyMMdd"
+transforms.router.timestamp.format="YYYYMMdd"
 transforms.router.topic.format="${topic}_${timestamp}"
 ```
 
