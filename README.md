@@ -33,3 +33,10 @@ Todo:
 * Validate the supplied timezone code. Invalid timezones will default to `GMT` which may cause issues downstream.
 
 
+Gotchas:
+* The connector you are using this will has a significant impact on whether this will work:
+  * The "datagen" source connector does not produce message timestamps, so there is nothing to route from
+  * The "s3" sink connector manages the destination path (including topic name) independently, causing `Null Pointer` exceptions
+* A workaround would be to use the ExtractTimestamp SMT from Jeremy Custenborder's excellent common SMTs library (https://github.com/jcustenborder/kafka-connect-transform-common) 
+
+
